@@ -34,7 +34,7 @@ var itemSearch = function() {
     message: "What is the item ID?"
   }).then(function(answer) {
     var query = "SELECT item_id FROM products WHERE ?";
-    connection.query(query, { artist: answer.name }, function(err, res) {
+    connection.query(query, { item_id: answer.name }, function(err, res) {
       for (var i = 0; i < res.length; i++) {
         console.log("item_id: " + res[i].item_id);
       }
